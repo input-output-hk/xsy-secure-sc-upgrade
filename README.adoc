@@ -2,6 +2,7 @@
 = https://github.com/input-output-hk/xsy-secure-sc-upgrade[Secure Plutus Smart Contract Upgrade Mechanism]
 
 Currently, DApps on Cardano have to decide between two painful options in regards to facilitating smart contract upgrades:
+ 
  * Support smart contract upgrades & place user funds at risk.
  * Do not support upgrades at the smart contract level; instead require social migration to upgrade the protocol.
 
