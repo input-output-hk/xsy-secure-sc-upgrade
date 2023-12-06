@@ -1,0 +1,28 @@
+[.text-justify]
+= https://github.com/input-output-hk/xsy-secure-sc-upgrade[Secure Plutus Smart Contract Upgrade Mechanism]
+
+Currently, DApps on Cardano have to decide between two painful options in regards to facilitating smart contract upgrades:
+ * Support smart contract upgrades & place user funds at risk.
+ * Do not support upgrades at the smart contract level; instead require social migration to upgrade the protocol.
+
+*Option 1* introduces a backdoor to steal from users by moving funds to an arbitrary insecure smart contract
+thus deactivating security mechanisms.
+
+*Option 2* has a number of obvious issues. The first and foremost of which is that if a user is not informed of the protocol
+migration their funds will sit inactive indefinitely, and in certain cases become inaccessible to them without special
+technical support or support from the protocol's permissioned agents (which for instance might be required to interact with
+a depreciated liquidity pool on a DEX). Inactivity alone is a tremendous problem that is illustrated by the large amount of
+stake delegated to inactive pools.
+
+This proposal offers a third option that facilitates smart contract upgrades without introducing a backdoor or allowing
+arbitrary transfers of users' funds.
+
+Several components are required to facilitate secure DApp upgrades on Cardano:
+
+. A set of onchain smart contracts to facilitate:
+. The addition and removal of auditor credentials via onchain consensus.
+. The issuance and peer review of audit certificates by accredited auditors.
+. Onchain publication of audited script hashes and relevant audit information required to perform a safe smart contract upgrade;
+information is verified by the presence of an audit certificate.
+. An onchain utility library to facilitate the integration of the secure upgrade mechanism into existing
+Cardano smart contract protocols.
